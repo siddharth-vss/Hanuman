@@ -1,0 +1,8 @@
+body {
+  background-image: url('../../assets/imgs/HANU003.jpg');
+  width: 98vw;
+  height: 98vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
