@@ -17,7 +17,7 @@ const index = () => {
   useEffect(() => {
     return () => {
      console.log(audioRef);
-      // audioRef.current?.play();
+      audioRef.current?.play();
     }
   })
 
