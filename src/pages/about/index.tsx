@@ -19,7 +19,7 @@ const index = () => {
      console.log(audioRef);
       audioRef.current?.play();
     }
-  })
+  },[onload])
 
   const togglePlayPause = () => {
     if (isPlaying) {
