@@ -1,9 +1,11 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate ,useLocation } from "react-router-dom"
 import img from '../../assets/HANUMAN.png';
 import './nav.css';
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const path = location.pathname ;
   
 
   return (
@@ -15,19 +17,19 @@ const Navbar = () => {
       </label>
       <ul>
         <li>
-          <a onClick={()=>{navigate('/')}} className="active">Home</a>
+          <a onClick={()=>{navigate('/')}} className={(path == '/')? 'active':''} >Home</a>
         </li>
         <li>
-          <a onClick={()=>{navigate('/')}}>About</a>
+          <a onClick={()=>{navigate('/')}} className={(path == '/about')? 'active':''} >About</a>
         </li>
         <li>
-          <a onClick={()=>{navigate('/')}}>Features</a>
+          <a onClick={()=>{navigate('/')}} className={(path == '/xyz')? 'active':''} >Features</a>
         </li>
         <li>
-          <a onClick={()=>{navigate('/')}}>services</a>
+          <a onClick={()=>{navigate('/')}} className={(path == '/xyz')? 'active':''} >services</a>
         </li>
         <li>
-          <a onClick={()=>{navigate('/')}}>F.A.Q</a>
+          <a onClick={()=>{navigate('/')}} className={(path == '/xyz')? 'active':''} >F.A.Q</a>
         </li>
       </ul>
     </nav>
