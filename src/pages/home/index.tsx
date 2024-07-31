@@ -15,16 +15,20 @@ const navigate =  useNavigate();
   const [opacity, setopacity] = useState(0)
   const [opacity1, setopacity1] = useState(0)
   const [opacity2, setopacity2] = useState(0)
+  const [opacity3, setopacity3] = useState(0)
 
   setTimeout(() => {
     setopacity(1);
     setTimeout(() => {
-      setopacity1(1);
+    setopacity1(1);
       setTimeout(() => {
-        setopacity2(1);
-      }, 4000);
+      setopacity2(1);
+        setTimeout(() => {
+          setopacity3(1);
+        }, 5000);
+      }, 3000);
     }, 2000);
-  }, 1000);
+  }, 3000);
 
   useEffect(() => {
     setsize({
@@ -36,16 +40,16 @@ const navigate =  useNavigate();
     <>
       <div className="loader h-screen w-full fixed top-0 left-0 z-30 bg-[#141414] p-[3vw]">
         <div className="relative size-full flex flex-col items-center justify-center gap-[3vw]">
-          <img style={{ opacity: opacity }} className=" transition-opacity loader-border absolute h-full w-full top-0 left-0" src={frame} alt="" />
-          <img style={{ opacity: opacity1 }} className='transition-opacity logo w-[25vw] -translate-y-[10%]' src={logo} alt="" />
-          <button className="enter-experience-btn relative px-[2.5vw] transition-opacity py-[1vw] max-2xl:text-xs text-[#141414] uppercase translate-y-[0px] translate-x-[0px]" style={{ translate: 'none', rotate: 'none', scale: 'none', opacity: opacity2 }}
+          <img style={{ opacity: opacity1 }} className=" transition-opacity loader-border absolute h-full w-full top-0 left-0" src={frame} alt="" />
+          <img style={{ opacity: opacity2 }} className='transition-opacity logo w-[25vw] -translate-y-[10%]' src={logo} alt="" />
+          <button className="enter-experience-btn relative px-[2.5vw] transition-opacity py-[1vw] max-2xl:text-xs text-[#141414] uppercase translate-y-[0px] translate-x-[0px]" style={{ translate: 'none', rotate: 'none', scale: 'none', opacity: opacity3 }}
           onClick={() => navigate('/about')}
           >
             Enter the experience
             <img  className="size-full absolute top-0 left-0 -z-[8]" src={btn} alt="" />
           </button>
         </div>
-        <video src={bg} autoPlay muted loop height={size.height} width={size.width} className='transition-opacity overlay-video size-full absolute top-0 left-0 object-cover -z-10'></video>
+        <video style={{ opacity: opacity }} src={bg} autoPlay muted loop height={size.height} width={size.width} className='transition-opacity overlay-video size-full absolute top-0 left-0 object-cover -z-10'></video>
       </div>
     </>
   )
