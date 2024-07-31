@@ -32,7 +32,7 @@ const index = () => {
 
   return (
     <div className='bg'>
-      <audio onEnded={()=>{setIsPlaying(!isPlaying)}} ref={audioRef} src={voice}></audio>
+      <audio onEnded={()=>{audioRef.current?.play()}} ref={audioRef} src={voice}></audio>
       <Navbar />
       <div onClick={togglePlayPause} className=" py-10 h-screen w-screen over" >
         <div>
