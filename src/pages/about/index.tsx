@@ -55,7 +55,7 @@ const index = () => {
       audioRef.current?.play();
       gsap.to('#chalisa', {
         transform: 'translateY(-100%)',
-        // delay:15,
+        delay:15,
         duration: 248.333333,
         ease: "none"
       })
